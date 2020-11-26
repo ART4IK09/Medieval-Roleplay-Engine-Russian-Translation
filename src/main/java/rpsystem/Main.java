@@ -342,13 +342,13 @@ public class Main extends JavaPlugin implements Listener {
                 playersWithRightClickCooldown.add(player.getName());
 
                 if (player.hasPermission("rp.card.show.others") || player.hasPermission("rp.card.*") || player.hasPermission("rp.default")) {
-                    player.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == " + "Character Card of " + card.getPlayerName() + " == ");
-                    player.sendMessage(ChatColor.AQUA + "Name: " + card.getName());
-                    player.sendMessage(ChatColor.AQUA + "Race: " + card.getRace());
-                    player.sendMessage(ChatColor.AQUA + "Subculture: " + card.getSubculture());
-                    player.sendMessage(ChatColor.AQUA + "Age: " + card.getAge());
-                    player.sendMessage(ChatColor.AQUA + "Gender: " + card.getGender());
-                    player.sendMessage(ChatColor.AQUA + "Religion: " + card.getReligion());
+                    player.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == " + "Анкета " + card.getPlayerName() + " == ");
+                    player.sendMessage(ChatColor.AQUA + "Имя: " + card.getName());
+                    player.sendMessage(ChatColor.AQUA + "Раса: " + card.getRace());
+                    player.sendMessage(ChatColor.AQUA + "Субкультура: " + card.getSubculture());
+                    player.sendMessage(ChatColor.AQUA + "Возраст: " + card.getAge());
+                    player.sendMessage(ChatColor.AQUA + "Пол: " + card.getGender());
+                    player.sendMessage(ChatColor.AQUA + "Религия: " + card.getReligion());
 
                     int seconds = 2;
                     getServer().getScheduler().runTaskLater(this, new Runnable() {
