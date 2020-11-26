@@ -213,11 +213,11 @@ public class Main extends JavaPlugin implements Listener {
                 if (player.hasPermission("rp.local") || player.hasPermission("rp.rp") || player.hasPermission("rp.default")) {
                     if (!playersSpeakingInLocalChat.contains(player.getName())) {
                         playersSpeakingInLocalChat.add(player.getName());
-                        player.sendMessage(ChatColor.GREEN + "You are now talking in local chat.");
+                        player.sendMessage(ChatColor.GREEN + "Ты говоришь в локальный чат!");
                         return true;
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "You're already talking in local chat!");
+                        player.sendMessage(ChatColor.RED + "Ты уже говоришь в локальный чат!");
                         return false;
                     }
                 }
@@ -235,10 +235,10 @@ public class Main extends JavaPlugin implements Listener {
                 if (player.hasPermission("rp.global") || player.hasPermission("rp.ooc") || player.hasPermission("rp.default")) {
                     if (playersSpeakingInLocalChat.contains(player.getName())) {
                         playersSpeakingInLocalChat.remove(player.getName());
-                        player.sendMessage(ChatColor.GREEN + "You are now talking in global chat.");
+                        player.sendMessage(ChatColor.GREEN + "Ты говоришь в глобальный чат!");
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "You're already talking in global chat!");
+                        player.sendMessage(ChatColor.RED + "Ты уже в глобальном чате!");
                     }
                 }
                 else {
@@ -273,7 +273,7 @@ public class Main extends JavaPlugin implements Listener {
                     if (args.length > 0) {
                         try {
                             int max = Integer.parseInt(args[0]);
-                            sendMessageToPlayersWithinDistance(player,ChatColor.AQUA + "" + ChatColor.ITALIC + player.getName() + " has rolled a " + rollDice(max) + " out of " + max + ".", 25);
+                            sendMessageToPlayersWithinDistance(player,ChatColor.AQUA + "" + ChatColor.ITALIC + player.getName() + " кинул кость .Ему выпало " + rollDice(max) + " из " + max + ".", 25);
                         }
                         catch(Exception ignored) {
 
