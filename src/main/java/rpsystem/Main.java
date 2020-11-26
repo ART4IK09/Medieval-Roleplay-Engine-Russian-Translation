@@ -39,23 +39,23 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        System.out.println("Medieval Roleplay Engine plugin enabling....");
+        System.out.println("Medieval Roleplay Engine (Russian Translation) plugin enabling....");
 
         this.getServer().getPluginManager().registerEvents(this, this);
 
         loadCards();
 
-        System.out.println("Medieval Roleplay Engine plugin enabled.");
+        System.out.println("Medieval Roleplay Engine (Russian Translation) plugin enabled.");
     }
 
     @Override
     public void onDisable() {
-        System.out.println("Medieval Roleplay Engine plugin disabling....");
+        System.out.println("Medieval Roleplay Engine (Russian Translation) plugin disabling....");
 
         saveCardFileNames();
         saveCards();
 
-        System.out.println("Medieval Roleplay Engine plugin disabled.");
+        System.out.println("Medieval Roleplay Engine(Russian Translation)  plugin disabled.");
     }
 
     public void saveCardFileNames() {

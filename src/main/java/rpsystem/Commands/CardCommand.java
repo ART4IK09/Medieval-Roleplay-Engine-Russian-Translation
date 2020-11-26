@@ -27,13 +27,13 @@ public class CardCommand {
                 for (CharacterCard card : cards) {
 
                     if (card.getPlayerName().equalsIgnoreCase(player.getName())) {
-                        player.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n----------\n" + "Character Card of " + card.getPlayerName() + "\n----------\n");
-                        player.sendMessage(ChatColor.AQUA + "Name: " + card.getName());
-                        player.sendMessage(ChatColor.AQUA + "Race: " + card.getRace());
-                        player.sendMessage(ChatColor.AQUA + "Subculture: " + card.getSubculture());
-                        player.sendMessage(ChatColor.AQUA + "Age: " + card.getAge());
-                        player.sendMessage(ChatColor.AQUA + "Gender: " + card.getGender());
-                        player.sendMessage(ChatColor.AQUA + "Religion: " + card.getReligion());
+                        player.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n----------\n" + "--Анкета--" + card.getPlayerName() + "\n----------\n");
+                        player.sendMessage(ChatColor.AQUA + "Имя: " + card.getName());
+                        player.sendMessage(ChatColor.AQUA + "Раса: " + card.getRace());
+                        player.sendMessage(ChatColor.AQUA + "Субкультура: " + card.getSubculture());
+                        player.sendMessage(ChatColor.AQUA + "Возраст: " + card.getAge());
+                        player.sendMessage(ChatColor.AQUA + "Пол: " + card.getGender());
+                        player.sendMessage(ChatColor.AQUA + "Религия: " + card.getReligion());
                     }
                 }
             }
@@ -50,18 +50,18 @@ public class CardCommand {
             Player player = (Player) sender;
 
             if (player.hasPermission("rp.card.help") || player.hasPermission("rp.card.*") || player.hasPermission("rp.default")) {
-                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + " == " + "Character Card Commands" + " == ");
-                sender.sendMessage(ChatColor.AQUA + "/card - View your character card.");
-                sender.sendMessage(ChatColor.AQUA + "/card (player) - View the character card of a specific player.");
-                sender.sendMessage(ChatColor.AQUA + "/card name (name) - Change your character's name.");
-                sender.sendMessage(ChatColor.AQUA + "/card race (race) - Change your character's race.");
-                sender.sendMessage(ChatColor.AQUA + "/card subculture (subculture) - Change your character's subculture.");
-                sender.sendMessage(ChatColor.AQUA + "/card age (age) - Change your character's age.");
-                sender.sendMessage(ChatColor.AQUA + "/card gender (gender) - Change your character's gender.");
-                sender.sendMessage(ChatColor.AQUA + "/card religion (religion) - Change your character's religion.");
+                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + " == " + "--Команды для анкеты--" + " == ");
+                sender.sendMessage(ChatColor.AQUA + "/card - Просмотреть свою анкету.");
+                sender.sendMessage(ChatColor.AQUA + "/card (игрок) - Посмотреть анкету игрока.");
+                sender.sendMessage(ChatColor.AQUA + "/card name (имя) - Изменить имя персонажа.");
+                sender.sendMessage(ChatColor.AQUA + "/card race (раса) - Изменить расу персонажа.");
+                sender.sendMessage(ChatColor.AQUA + "/card subculture (субкультура) - Изменить субкультуру.");
+                sender.sendMessage(ChatColor.AQUA + "/card age (возраст) - Изменить возраст.");
+                sender.sendMessage(ChatColor.AQUA + "/card gender (пол) - Изменить пол.");
+                sender.sendMessage(ChatColor.AQUA + "/card religion (религия) - Изменить религию.");
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.help'");
+                player.sendMessage(ChatColor.RED + "Ты не можешь использовать данную команду");
             }
         }
 
@@ -80,7 +80,7 @@ public class CardCommand {
 
                                 if (args.length > 1) {
                                     card.setName(createStringFromFirstArgOnwards(args, 1));
-                                    player.sendMessage(ChatColor.GREEN + "Name set! Type /card to see changes.");
+                                    player.sendMessage(ChatColor.GREEN + "▎ Имя установлено");
 
                                     // cooldown
                                     main.playersOnNameChangeCooldown.add(player.getName());
@@ -90,16 +90,16 @@ public class CardCommand {
                                         @Override
                                         public void run() {
                                             main.playersOnNameChangeCooldown.remove(player.getName());
-                                            player.sendMessage(ChatColor.GREEN + "You can now change your character's name again.");
+                                            player.sendMessage(ChatColor.GREEN + "▎ Ты снова можешь изменить имя.");
                                         }
                                     }, seconds * 20);
                                 }
                                 else {
-                                    player.sendMessage(ChatColor.RED + "Usage: /card name (character-name)");
+                                    player.sendMessage(ChatColor.YELLOW + "▎ Использование: /card name (имя персонажа)");
                                 }
                             }
                             else {
-                                player.sendMessage(ChatColor.RED + "You must wait before changing your name again!");
+                                    player.sendMessage(ChatColor.RED + "▎ Подожди немного чтобы снова менять имя!");
                             }
                         }
 
@@ -123,10 +123,10 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setRace(args[1]);
-                            player.sendMessage(ChatColor.GREEN + "Race set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "▎ Раса установлена.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card race (character-race)");
+                            player.sendMessage(ChatColor.YELLOW + "▎ Использование: /card race (имя персонажа)");
                         }
                     }
                 }
@@ -149,10 +149,10 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setSubculture(args[1]);
-                            player.sendMessage(ChatColor.GREEN + "Subculture set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "▎ Субкультура установлена.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card subculture (character-subculture)");
+                            player.sendMessage(ChatColor.YELLOW + "▎ Использование: /card subculture (cубкультура персонажа)");
                         }
                     }
                 }
@@ -175,10 +175,10 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setReligion(args[1]);
-                            player.sendMessage(ChatColor.GREEN + "Religion set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "▎ Религия установлена.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card religion (character-religion)");
+                            player.sendMessage(ChatColor.YELLOW + "▎ Использование: /card religion (религия персонажа)");
                         }
                     }
                 }
@@ -201,10 +201,10 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setAge(Integer.parseInt(args[1]));
-                            player.sendMessage(ChatColor.GREEN + "Age set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "▎ Возраст установлен.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card age (character-age)");
+                            player.sendMessage(ChatColor.YELLOW + "▎ Использование: /card age (возраст персонажа)");
                         }
                     }
                 }
@@ -227,10 +227,10 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setGender(args[1]);
-                            player.sendMessage(ChatColor.GREEN + "Gender set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "▎ Пол установлен.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card gender (character-gender)");
+                            player.sendMessage(ChatColor.RED + "Использование: /card gender (пол персонажа)");
                         }
                     }
                 }
@@ -251,19 +251,19 @@ public class CardCommand {
                 for (CharacterCard card : cards) {
                     if (args.length > 0) {
                         if (card.getPlayerName().equals(args[0])) {
-                            sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n----------\n" + "Character Card of " + card.getPlayerName() + "\n----------\n");
-                            sender.sendMessage(ChatColor.AQUA + "Name: " + card.getName());
-                            sender.sendMessage(ChatColor.AQUA + "Race: " + card.getRace());
-                            sender.sendMessage(ChatColor.AQUA + "Subculture: " + card.getSubculture());
-                            sender.sendMessage(ChatColor.AQUA + "Age: " + card.getAge());
-                            sender.sendMessage(ChatColor.AQUA + "Gender: " + card.getGender());
-                            sender.sendMessage(ChatColor.AQUA + "Religion: " + card.getReligion());
+                            sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n----------\n" + "--Анкета--" + card.getPlayerName() + "\n----------\n");
+                            sender.sendMessage(ChatColor.AQUA + "Имя: " + card.getName());
+                            sender.sendMessage(ChatColor.AQUA + "Раса: " + card.getRace());
+                            sender.sendMessage(ChatColor.AQUA + "Субкультура: " + card.getSubculture());
+                            sender.sendMessage(ChatColor.AQUA + "Возрат: " + card.getAge());
+                            sender.sendMessage(ChatColor.AQUA + "Пол: " + card.getGender());
+                            sender.sendMessage(ChatColor.AQUA + "Религия: " + card.getReligion());
                             return;
                         }
                     }
                 }
 
-                player.sendMessage(ChatColor.RED + "That player wasn't found!");
+                player.sendMessage(ChatColor.RED + "Игрок не найден!");
 
             }
             else {

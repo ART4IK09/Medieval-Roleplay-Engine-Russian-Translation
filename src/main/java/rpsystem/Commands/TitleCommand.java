@@ -41,15 +41,15 @@ public class TitleCommand {
 
                         player.getInventory().setItemInMainHand(book);
 
-                        player.sendMessage(ChatColor.GREEN + "Title added to book!");
+                        player.sendMessage(ChatColor.GREEN + "Книга переименована!");
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "Usage: /title (new title)");
+                        player.sendMessage(ChatColor.RED + "Использование: /title (новый заголовок)");
                     }
 
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "You have to be holding a book and quill to use this command!");
+                    player.sendMessage(ChatColor.RED + "Ты должен держать книгу с чернилами!");
                 }
 
             }
