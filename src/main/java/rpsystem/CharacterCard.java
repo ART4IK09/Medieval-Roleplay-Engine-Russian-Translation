@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class CharacterCard {
-    private String playerName = "defaultPlayerName";
-    private String name = "defaultName";
-    private String race = "defaultRace";
-    private String subculture = "defaultSubculture";
-    private int age = 0;
-    private String gender = "defaultGender";
-    private String religion = "defaultReligion";
+    private String playerName = "Как меня зовут?";
+    private String name = "Вспомнить как меня зовут?";
+    private String race = "Какая у меня раса?";
+    private String subculture = "Кто я?";
+    private int age = 18;
+    private String gender = "Я женщина или мужчина?";
+    private String religion = "В кого я верю?";
 
     public CharacterCard(String nameOfPlayer) {
         playerName = nameOfPlayer;
