@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Medieval-Roleplay-Engine.iml" filepath="$PROJECT_DIR$/Medieval-Roleplay-Engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Medieval-Roleplay-Engine-Russian-Translation.iml" filepath="$PROJECT_DIR$/Medieval-Roleplay-Engine-Russian-Translation.iml" />
     </modules>
   </component>
 </project>
